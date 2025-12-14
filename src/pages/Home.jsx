@@ -1,9 +1,9 @@
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { AppContext } from '../context/AppContext';
+import { useAppContext } from '../context/AppContext';
 
 const Home = () => {
-  const { students, teachers, courses, enrollments } = useContext(AppContext);
+  const { students, teachers, courses, enrollments } = useAppContext();
 
   return (
     <div className="space-y-8">

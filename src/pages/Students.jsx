@@ -1,8 +1,8 @@
 import { useContext, useState } from 'react';
-import { AppContext } from '../context/AppContext';
+import { useAppContext } from '../context/AppContext';
 
 const Students = () => {
-  const { students, addStudent, updateStudent, deleteStudent } = useContext(AppContext);
+  const { students, addStudent, updateStudent, deleteStudent } = useAppContext();
   const [newStudent, setNewStudent] = useState({ name: '', email: '', age: '' });
   const [editing, setEditing] = useState(null);
 
