@@ -3,10 +3,19 @@ import React, { createContext, useState, useContext, useEffect } from 'react';
 const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
-  const [students, setStudents] = useState([]);
-  const [teachers, setTeachers] = useState([]);
-  const [courses, setCourses] = useState([]);
-  const [enrollments, setEnrollments] = useState([]);
+  const [students, setStudents] = useState([
+    { id: 1, name: 'John Doe', email: 'john@example.com', rollNumber: '001' },
+    { id: 2, name: 'Jane Smith', email: 'jane@example.com', rollNumber: '002' }
+  ]);
+  const [teachers, setTeachers] = useState([
+    { id: 1, name: 'Dr. Alice Johnson', email: 'alice@example.com', subject: 'Math' }
+  ]);
+  const [courses, setCourses] = useState([
+    { id: 1, name: 'Mathematics 101', description: 'Basic Math' }
+  ]);
+  const [enrollments, setEnrollments] = useState([
+    { id: 1, studentId: 1, courseId: 1 }
+  ]);
   const [courseTeachers, setCourseTeachers] = useState([]);
 
   // Load data from localStorage on mount
